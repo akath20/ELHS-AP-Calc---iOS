@@ -1,0 +1,471 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FAF5002E1960741D0068055F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF5002D1960741D0068055F /* Foundation.framework */; };
+		FAF500301960741D0068055F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF5002F1960741D0068055F /* CoreGraphics.framework */; };
+		FAF500321960741D0068055F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF500311960741D0068055F /* UIKit.framework */; };
+		FAF500381960741D0068055F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FAF500361960741D0068055F /* InfoPlist.strings */; };
+		FAF5003A1960741D0068055F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF500391960741D0068055F /* main.m */; };
+		FAF5003E1960741D0068055F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF5003D1960741D0068055F /* AppDelegate.m */; };
+		FAF500411960741D0068055F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAF5003F1960741D0068055F /* Main.storyboard */; };
+		FAF500441960741D0068055F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF500431960741D0068055F /* ViewController.m */; };
+		FAF500461960741E0068055F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAF500451960741E0068055F /* Images.xcassets */; };
+		FAF5004D1960741E0068055F /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF5004C1960741E0068055F /* XCTest.framework */; };
+		FAF5004E1960741E0068055F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF5002D1960741D0068055F /* Foundation.framework */; };
+		FAF5004F1960741E0068055F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF500311960741D0068055F /* UIKit.framework */; };
+		FAF500571960741F0068055F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FAF500551960741F0068055F /* InfoPlist.strings */; };
+		FAF500591960741F0068055F /* ELHS_AP_CalcTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF500581960741F0068055F /* ELHS_AP_CalcTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FAF500501960741E0068055F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FAF500221960741D0068055F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FAF500291960741D0068055F;
+			remoteInfo = "ELHS AP Calc";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FAF5002A1960741D0068055F /* ELHS AP Calc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ELHS AP Calc.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAF5002D1960741D0068055F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		FAF5002F1960741D0068055F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		FAF500311960741D0068055F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		FAF500351960741D0068055F /* ELHS AP Calc-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ELHS AP Calc-Info.plist"; sourceTree = "<group>"; };
+		FAF500371960741D0068055F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FAF500391960741D0068055F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FAF5003B1960741D0068055F /* ELHS AP Calc-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ELHS AP Calc-Prefix.pch"; sourceTree = "<group>"; };
+		FAF5003C1960741D0068055F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		FAF5003D1960741D0068055F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		FAF500401960741D0068055F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FAF500421960741D0068055F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		FAF500431960741D0068055F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		FAF500451960741E0068055F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		FAF5004B1960741E0068055F /* ELHS AP CalcTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ELHS AP CalcTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAF5004C1960741E0068055F /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		FAF500541960741F0068055F /* ELHS AP CalcTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ELHS AP CalcTests-Info.plist"; sourceTree = "<group>"; };
+		FAF500561960741F0068055F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FAF500581960741F0068055F /* ELHS_AP_CalcTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ELHS_AP_CalcTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FAF500271960741D0068055F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAF500301960741D0068055F /* CoreGraphics.framework in Frameworks */,
+				FAF500321960741D0068055F /* UIKit.framework in Frameworks */,
+				FAF5002E1960741D0068055F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAF500481960741E0068055F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAF5004D1960741E0068055F /* XCTest.framework in Frameworks */,
+				FAF5004F1960741E0068055F /* UIKit.framework in Frameworks */,
+				FAF5004E1960741E0068055F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FAF500211960741D0068055F = {
+			isa = PBXGroup;
+			children = (
+				FAF500331960741D0068055F /* ELHS AP Calc */,
+				FAF500521960741E0068055F /* ELHS AP CalcTests */,
+				FAF5002C1960741D0068055F /* Frameworks */,
+				FAF5002B1960741D0068055F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FAF5002B1960741D0068055F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FAF5002A1960741D0068055F /* ELHS AP Calc.app */,
+				FAF5004B1960741E0068055F /* ELHS AP CalcTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FAF5002C1960741D0068055F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FAF5002D1960741D0068055F /* Foundation.framework */,
+				FAF5002F1960741D0068055F /* CoreGraphics.framework */,
+				FAF500311960741D0068055F /* UIKit.framework */,
+				FAF5004C1960741E0068055F /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FAF500331960741D0068055F /* ELHS AP Calc */ = {
+			isa = PBXGroup;
+			children = (
+				FAF5003C1960741D0068055F /* AppDelegate.h */,
+				FAF5003D1960741D0068055F /* AppDelegate.m */,
+				FAF5003F1960741D0068055F /* Main.storyboard */,
+				FAF500421960741D0068055F /* ViewController.h */,
+				FAF500431960741D0068055F /* ViewController.m */,
+				FAF500451960741E0068055F /* Images.xcassets */,
+				FAF500341960741D0068055F /* Supporting Files */,
+			);
+			path = "ELHS AP Calc";
+			sourceTree = "<group>";
+		};
+		FAF500341960741D0068055F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FAF500351960741D0068055F /* ELHS AP Calc-Info.plist */,
+				FAF500361960741D0068055F /* InfoPlist.strings */,
+				FAF500391960741D0068055F /* main.m */,
+				FAF5003B1960741D0068055F /* ELHS AP Calc-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FAF500521960741E0068055F /* ELHS AP CalcTests */ = {
+			isa = PBXGroup;
+			children = (
+				FAF500581960741F0068055F /* ELHS_AP_CalcTests.m */,
+				FAF500531960741F0068055F /* Supporting Files */,
+			);
+			path = "ELHS AP CalcTests";
+			sourceTree = "<group>";
+		};
+		FAF500531960741F0068055F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FAF500541960741F0068055F /* ELHS AP CalcTests-Info.plist */,
+				FAF500551960741F0068055F /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FAF500291960741D0068055F /* ELHS AP Calc */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FAF5005C1960741F0068055F /* Build configuration list for PBXNativeTarget "ELHS AP Calc" */;
+			buildPhases = (
+				FAF500261960741D0068055F /* Sources */,
+				FAF500271960741D0068055F /* Frameworks */,
+				FAF500281960741D0068055F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ELHS AP Calc";
+			productName = "ELHS AP Calc";
+			productReference = FAF5002A1960741D0068055F /* ELHS AP Calc.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FAF5004A1960741E0068055F /* ELHS AP CalcTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FAF5005F1960741F0068055F /* Build configuration list for PBXNativeTarget "ELHS AP CalcTests" */;
+			buildPhases = (
+				FAF500471960741E0068055F /* Sources */,
+				FAF500481960741E0068055F /* Frameworks */,
+				FAF500491960741E0068055F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FAF500511960741E0068055F /* PBXTargetDependency */,
+			);
+			name = "ELHS AP CalcTests";
+			productName = "ELHS AP CalcTests";
+			productReference = FAF5004B1960741E0068055F /* ELHS AP CalcTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FAF500221960741D0068055F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Alex Atwater";
+				TargetAttributes = {
+					FAF5004A1960741E0068055F = {
+						TestTargetID = FAF500291960741D0068055F;
+					};
+				};
+			};
+			buildConfigurationList = FAF500251960741D0068055F /* Build configuration list for PBXProject "ELHS AP Calc" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FAF500211960741D0068055F;
+			productRefGroup = FAF5002B1960741D0068055F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FAF500291960741D0068055F /* ELHS AP Calc */,
+				FAF5004A1960741E0068055F /* ELHS AP CalcTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FAF500281960741D0068055F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAF500461960741E0068055F /* Images.xcassets in Resources */,
+				FAF500381960741D0068055F /* InfoPlist.strings in Resources */,
+				FAF500411960741D0068055F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAF500491960741E0068055F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAF500571960741F0068055F /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FAF500261960741D0068055F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAF500441960741D0068055F /* ViewController.m in Sources */,
+				FAF5003E1960741D0068055F /* AppDelegate.m in Sources */,
+				FAF5003A1960741D0068055F /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAF500471960741E0068055F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAF500591960741F0068055F /* ELHS_AP_CalcTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FAF500511960741E0068055F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FAF500291960741D0068055F /* ELHS AP Calc */;
+			targetProxy = FAF500501960741E0068055F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FAF500361960741D0068055F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FAF500371960741D0068055F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		FAF5003F1960741D0068055F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FAF500401960741D0068055F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FAF500551960741F0068055F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FAF500561960741F0068055F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FAF5005A1960741F0068055F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		FAF5005B1960741F0068055F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FAF5005D1960741F0068055F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ELHS AP Calc/ELHS AP Calc-Prefix.pch";
+				INFOPLIST_FILE = "ELHS AP Calc/ELHS AP Calc-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		FAF5005E1960741F0068055F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ELHS AP Calc/ELHS AP Calc-Prefix.pch";
+				INFOPLIST_FILE = "ELHS AP Calc/ELHS AP Calc-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		FAF500601960741F0068055F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ELHS AP Calc.app/ELHS AP Calc";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ELHS AP Calc/ELHS AP Calc-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "ELHS AP CalcTests/ELHS AP CalcTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		FAF500611960741F0068055F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ELHS AP Calc.app/ELHS AP Calc";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ELHS AP Calc/ELHS AP Calc-Prefix.pch";
+				INFOPLIST_FILE = "ELHS AP CalcTests/ELHS AP CalcTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FAF500251960741D0068055F /* Build configuration list for PBXProject "ELHS AP Calc" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAF5005A1960741F0068055F /* Debug */,
+				FAF5005B1960741F0068055F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FAF5005C1960741F0068055F /* Build configuration list for PBXNativeTarget "ELHS AP Calc" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAF5005D1960741F0068055F /* Debug */,
+				FAF5005E1960741F0068055F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		FAF5005F1960741F0068055F /* Build configuration list for PBXNativeTarget "ELHS AP CalcTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAF500601960741F0068055F /* Debug */,
+				FAF500611960741F0068055F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FAF500221960741D0068055F /* Project object */;
+}
