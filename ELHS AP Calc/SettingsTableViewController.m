@@ -34,7 +34,7 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     
-    _logoutUser = @"Logout USERNAME";
+    _logoutUser.titleLabel.text = @"Logout USERNAME";
     
 }
 

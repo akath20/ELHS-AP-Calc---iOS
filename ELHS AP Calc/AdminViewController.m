@@ -47,13 +47,25 @@
 }
 */
 
+
+- (void)showAlert {
+    
+    [[[UIAlertView alloc] initWithTitle:@"Wrong Username/Password" message:@"Check username and password." delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles: nil] show];
+    
+}
+
 - (IBAction)goPressed:(id)sender {
     
-    PFQuery *query = [PFQuery queryWithClassName:@"admins"];
+    PFQuery *query = [PFQuery queryWithClassName:@"Admins"];
     [query whereKey:@"username" equalTo:_username.text];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (error) {
-            [[[UIAlertView alloc] initWithTitle:@"Wrong Username" message:@"Username not found" delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles: nil] show];
+        if (error||[objects count] < 1) {
+            //wrong username
+            [self showAlert];
+        } else if (![[[objects objectAtIndex:0] objectForKey:@"password"] isEqualToString:_password.text]) {
+        //password wrong
+            [self showAlert];
+        
         } else {
         
             if ([[[objects objectAtIndex:0] objectForKey:@"password"] isEqualToString:_password.text]) {

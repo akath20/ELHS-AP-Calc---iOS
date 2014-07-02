@@ -126,7 +126,7 @@
         [self performSegueWithIdentifier:@"verified" sender:nil];
         
     } else {
-        [[[UIAlertView alloc] initWithTitle:@"Incorrect" message:@"Incorrect answer. Please try again. If problem continues, please contact Alex or G. (Answer is not case-sensitive)" delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles: nil] show];
+        [[[UIAlertView alloc] initWithTitle:@"Incorrect" message:@"Incorrect answer. Please try again. If problem continues, please contact Alex or G. (Answer is not case-sensitive). Also make sure there is no extra space at end of answer." delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles: nil] show];
     }
     
     
