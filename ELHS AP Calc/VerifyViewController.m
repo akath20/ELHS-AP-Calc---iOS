@@ -123,7 +123,7 @@
     
     if ([[_userAnswer.text lowercaseString] isEqualToString:questionAnswer]) {
         //if matches from database, go on
-        [self performSegueWithIdentifier:@"mainScreen" sender:nil];
+        [self performSegueWithIdentifier:@"verified" sender:nil];
         
     } else {
         [[[UIAlertView alloc] initWithTitle:@"Incorrect" message:@"Incorrect answer. Please try again. If problem continues, please contact Alex or G. (Answer is not case-sensitive)" delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles: nil] show];
