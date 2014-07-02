@@ -146,6 +146,15 @@
     
     
 }
+
+
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    [_userAnswer resignFirstResponder];
+    
+}
+
+
 @end
 
 

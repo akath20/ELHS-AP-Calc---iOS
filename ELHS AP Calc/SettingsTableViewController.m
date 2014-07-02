@@ -35,10 +35,15 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     
-    _logoutUser.titleLabel.text = [NSString stringWithFormat:@"    Signout %@", [[NSUserDefaults standardUserDefaults] objectForKey:@"currentUser"]];
+    
     
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    
+    _logoutUser.titleLabel.text = [NSString stringWithFormat:@"    Signout %@", [[NSUserDefaults standardUserDefaults] objectForKey:@"currentUser"]];
+    
+}
 
 
 
@@ -106,8 +111,9 @@
 - (IBAction)signout:(id)sender {
     
     
+    
     UIActionSheet *warning = [[UIActionSheet alloc] init];
-    [[warning initWithTitle:@"Warning" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:@"I'm sure" otherButtonTitles: nil] showFromTabBar:self.tabBarController.tabBar];
+    [[warning initWithTitle:@"Warning. This will delete username from database. Are you sure?" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:@"I'm sure" otherButtonTitles: nil] showFromTabBar:self.tabBarController.tabBar];
     
     
     
@@ -116,7 +122,7 @@
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
     
-    if ([[actionSheet buttonTitleAtIndex:buttonIndex] isEqualToString:@"I'm Sure"]) {
+    if ([[actionSheet buttonTitleAtIndex:buttonIndex] isEqualToString:@"I'm sure"]) {
         //delete account and move to log in
         
         //find username to delete
@@ -135,10 +141,20 @@
                         
                         [self performSegueWithIdentifier:@"showStart" sender:self];
                         
+                    } else {
+                        
+                        //if error
+                        [[self errorAlert] show];
+                        
                     }
                     
-                }]
+                }];
                 
+            } else {
+                
+                //if error
+                
+                [[self errorAlert] show];
             }
             
             
@@ -149,6 +165,12 @@
         
         
     }
+}
+
+- (UIAlertView *)errorAlert {
+    
+    return [[UIAlertView alloc] initWithTitle:@"Error" message:@"There was an error deleting your username from the database. Please try again later." delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles: nil];
+    
 }
 
 

@@ -29,11 +29,6 @@
     // Do any additional setup after loading the view.
     
     
-    //check if user logged in
-    if (![[NSUserDefaults standardUserDefaults] objectForKey:@"currentUser"]) {
-        //if not logged in
-        [self performSegueWithIdentifier:@"signUp" sender:self];
-    }
     
     
 }
@@ -42,6 +37,24 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)viewWillLayoutSubviews {
+    
+    NSLog(@"\nCurrent User: %@", [[NSUserDefaults standardUserDefaults] objectForKey:@"currentUser"]);
+    
+    id currentUser = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentUser"];
+    
+    
+    
+    //check if user logged in
+    if (currentUser == nil) {
+        //if not logged in
+        [self performSegueWithIdentifier:@"signUp" sender:self];
+    }
+    
+    
+    
 }
 
 /*

@@ -113,7 +113,9 @@
 }
 
 
-
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    [_usernameField resignFirstResponder];
+}
 
 
 - (void)nextScreen {
