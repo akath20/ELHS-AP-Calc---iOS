@@ -85,7 +85,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="valueChanged:" destination="cWi-Rh-g9X" eventType="valueChanged" id="nFs-rB-ohj"/>
+                                    <action selector="valueChanged:" destination="cWi-Rh-g9X" eventType="editingChanged" id="Ti9-bf-ggB"/>
                                 </connections>
                             </textField>
                         </subviews>
@@ -102,7 +102,7 @@
                         <outlet property="nextButton" destination="jX1-8g-HPb" id="ZpN-Vi-lzQ"/>
                         <outlet property="questionLabel" destination="w9t-X9-CHy" id="Gug-C0-Uxs"/>
                         <outlet property="userAnswer" destination="usT-QU-IIe" id="ubc-IX-LBh"/>
-                        <segue destination="qUM-ag-vLV" kind="modal" identifier="mainScreen" modalTransitionStyle="flipHorizontal" id="YMj-dV-vn8"/>
+                        <segue destination="8Bo-Av-Lco" kind="modal" identifier="mainScreen" modalTransitionStyle="flipHorizontal" id="L1Z-M6-8uV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Plp-m4-KWP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -173,7 +173,4 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="YMj-dV-vn8"/>
-    </inferredMetricsTieBreakers>
 </document>

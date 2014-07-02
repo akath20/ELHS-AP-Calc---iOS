@@ -37,14 +37,21 @@
     
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    
+- (void)viewWillAppear:(BOOL)animated {
+   
     //clear past answer
     questionAnswer = @"";
     _userAnswer.text = @"";
     _userAnswer.placeholder = @"Answer";
     [_userAnswer setEnabled:false];
     [_nextButton setEnabled:false];
+    
+    
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    
+    
     
 
     
@@ -114,9 +121,12 @@
     
     //verify answer
     
-    if ([_userAnswer.text isEqualToString:questionAnswer]) {
+    if ([[_userAnswer.text lowercaseString] isEqualToString:questionAnswer]) {
         //if matches from database, go on
+        [self performSegueWithIdentifier:@"mainScreen" sender:nil];
         
+    } else {
+        [[[UIAlertView alloc] initWithTitle:@"Incorrect" message:@"Incorrect answer. Please try again. If problem continues, please contact Alex or G. (Answer is not case-sensitive)" delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles: nil] show];
     }
     
     
