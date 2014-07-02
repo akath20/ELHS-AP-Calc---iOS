@@ -97,6 +97,11 @@
                 }];
                 
             }
+            
+            
+            //once user is in system, make it on device
+            [[NSUserDefaults standardUserDefaults] setObject:_usernameField.text forKey:@"currentUser"];
+            
         }];
         
         

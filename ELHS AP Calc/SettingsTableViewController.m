@@ -7,6 +7,7 @@
 //
 
 #import "SettingsTableViewController.h"
+#import <Parse/Parse.h>
 
 @interface SettingsTableViewController ()
 
@@ -34,9 +35,11 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     
-    _logoutUser.titleLabel.text = @"Logout USERNAME";
+    _logoutUser.titleLabel.text = [NSString stringWithFormat:@"    Signout %@", [[NSUserDefaults standardUserDefaults] objectForKey:@"currentUser"]];
     
 }
+
+
 
 
 
@@ -99,5 +102,63 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (IBAction)signout:(id)sender {
+    
+    
+    UIActionSheet *warning = [[UIActionSheet alloc] init];
+    [[warning initWithTitle:@"Warning" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:@"I'm sure" otherButtonTitles: nil] showFromTabBar:self.tabBarController.tabBar];
+    
+    
+    
+    
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    
+    if ([[actionSheet buttonTitleAtIndex:buttonIndex] isEqualToString:@"I'm Sure"]) {
+        //delete account and move to log in
+        
+        //find username to delete
+        PFQuery *query = [PFQuery queryWithClassName:@"Users"];
+        [query whereKey:@"username" equalTo:[[NSUserDefaults standardUserDefaults] objectForKey:@"currentUser"]];
+        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+           
+            
+            if ([objects count] == 1 && !error) {
+                //all set, now delete
+                
+                [[objects objectAtIndex:0] deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                    //if deleted
+                    
+                    if (succeeded && !error) {
+                        
+                        [self performSegueWithIdentifier:@"showStart" sender:self];
+                        
+                    }
+                    
+                }]
+                
+            }
+            
+            
+            
+        }];
+        
+        
+        
+        
+    }
+}
+
+
+
+
+
+
+
+
+
+
 
 @end

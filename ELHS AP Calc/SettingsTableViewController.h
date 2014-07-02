@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SettingsTableViewController : UITableViewController <UITableViewDelegate>
+@interface SettingsTableViewController : UITableViewController <UITableViewDelegate, UIActionSheetDelegate>
 
 
 @property (strong, nonatomic) IBOutlet UIButton *logoutUser;
+
+- (IBAction)signout:(id)sender;
+
 @end

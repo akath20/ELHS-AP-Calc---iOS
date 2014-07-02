@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="OHJ-C3-Erb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Qgn-S0-bTY">
     <dependencies>
         <deployment defaultVersion="1536" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
@@ -53,7 +53,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="878" y="157"/>
+            <point key="canvasLocation" x="3150" y="-915"/>
         </scene>
         <!--Verify View Controller - Verify-->
         <scene sceneID="27z-MO-DLG">
@@ -117,7 +117,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Plp-m4-KWP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1336" y="157"/>
+            <point key="canvasLocation" x="3608" y="-915"/>
         </scene>
         <!--Username View Controller - Username-->
         <scene sceneID="t0O-19-zLw">
@@ -168,17 +168,16 @@
                     <connections>
                         <outlet property="statusText" destination="lNd-BD-1RV" id="Qx6-yo-NMn"/>
                         <outlet property="usernameField" destination="mpm-3d-LPN" id="dDX-cD-AfI"/>
-                        <segue destination="Qgn-S0-bTY" kind="modal" identifier="signedUp" modalTransitionStyle="flipHorizontal" id="vG6-QF-RmM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Di9-Zz-qcL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1825" y="157"/>
+            <point key="canvasLocation" x="4097" y="-915"/>
         </scene>
-        <!--View Controller - News-->
+        <!--News View Controller - News-->
         <scene sceneID="bqm-UQ-Sxl">
             <objects>
-                <viewController id="nVh-cq-I80" sceneMemberID="viewController">
+                <viewController id="nVh-cq-I80" customClass="NewsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TCK-6i-mwI"/>
                         <viewControllerLayoutGuide type="bottom" id="a93-MT-WWA"/>
@@ -186,9 +185,19 @@
                     <view key="view" contentMode="scaleToFill" id="SBB-yj-SPR">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="hBc-TC-Etr">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="520"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="News" id="Cc0-JC-0fi"/>
+                    <connections>
+                        <segue destination="OHJ-C3-Erb" kind="modal" identifier="signUp" animates="NO" id="ACc-YX-HzH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="69V-b0-O8u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -199,6 +208,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OHJ-C3-Erb" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="a5B-s6-SJI"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="YOT-BI-wsE">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -210,7 +220,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vE1-KR-Pps" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="478" y="157"/>
+            <point key="canvasLocation" x="2750" y="-915"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Ntt-8c-jZI">
@@ -232,7 +242,7 @@
             </objects>
             <point key="canvasLocation" x="2285" y="157"/>
         </scene>
-        <!--Settings Table View Controller-->
+        <!--Settings Table View Controller - Settings-->
         <scene sceneID="CAm-rL-VeB">
             <objects>
                 <tableViewController id="Iwv-9W-Coq" customClass="SettingsTableViewController" sceneMemberID="viewController">
@@ -251,11 +261,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wza-xd-yi2">
-                                                    <rect key="frame" x="20" y="7" width="172" height="30"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Logout/Delete Username">
+                                                    <state key="normal" title="    Signout USERNAME">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="signout:" destination="Iwv-9W-Coq" eventType="touchUpInside" id="AUk-cI-zby"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -292,9 +305,10 @@
                             <outlet property="delegate" destination="Iwv-9W-Coq" id="xjg-4f-b2Q"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="rU2-id-kt2"/>
+                    <navigationItem key="navigationItem" title="Settings" id="rU2-id-kt2"/>
                     <connections>
                         <outlet property="logoutUser" destination="Wza-xd-yi2" id="1cp-qJ-oXa"/>
+                        <segue destination="OHJ-C3-Erb" kind="modal" identifier="showStart" modalTransitionStyle="flipHorizontal" id="Hjj-1Q-IEK"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g5h-JF-uyn" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -398,6 +412,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="Hjj-1Q-IEK"/>
         <segue reference="imO-ng-VXq"/>
     </inferredMetricsTieBreakers>
 </document>
