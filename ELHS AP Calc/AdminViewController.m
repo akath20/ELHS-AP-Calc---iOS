@@ -28,6 +28,13 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"adminUsername"]) {
+        _username.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"adminUsername"];
+    }
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -70,6 +77,9 @@
         
             if ([[[objects objectAtIndex:0] objectForKey:@"password"] isEqualToString:_password.text]) {
                 [self performSegueWithIdentifier:@"adminPage" sender:nil];
+                
+                //save username
+                [[NSUserDefaults standardUserDefaults] setObject:_username.text forKey:@"adminUsername"];
             }
             
             

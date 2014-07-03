@@ -206,7 +206,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="w6U-Xb-CeZ" kind="relationship" relationship="viewControllers" id="oKA-tW-3oi"/>
+                        <segue destination="RFK-ro-kiJ" kind="relationship" relationship="viewControllers" id="wEg-50-6Pn"/>
                         <segue destination="rhF-rU-a89" kind="relationship" relationship="viewControllers" id="OgC-pj-6Yn"/>
                     </connections>
                 </tabBarController>
@@ -214,37 +214,56 @@
             </objects>
             <point key="canvasLocation" x="2285" y="157"/>
         </scene>
-        <!--Table View Controller - News-->
-        <scene sceneID="06D-vC-QQh">
+        <!--News View Controller - News-->
+        <scene sceneID="C7O-t1-8cD">
             <objects>
-                <tableViewController id="w6U-Xb-CeZ" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="qMn-M2-A8y">
+                <viewController id="RFK-ro-kiJ" customClass="NewsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fuX-Og-PYM"/>
+                        <viewControllerLayoutGuide type="bottom" id="cZs-nZ-mdz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LJL-85-0sg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="BhL-fv-Oz1">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BhL-fv-Oz1" id="iCM-gI-8vd">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="w6U-Xb-CeZ" id="1gF-TH-ScH"/>
-                            <outlet property="delegate" destination="w6U-Xb-CeZ" id="xZm-18-TyF"/>
-                        </connections>
-                    </tableView>
-                    <tabBarItem key="tabBarItem" title="News" image="newspaper.png" id="82w-rb-oEb"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="News Here" translatesAutoresizingMaskIntoConstraints="NO" id="Khm-x8-b99">
+                                <rect key="frame" x="0.0" y="58" width="320" height="460"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ry-A2-Cgz">
+                                <rect key="frame" x="20" y="20" width="53" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Refresh">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="refreshedButtonClicked:" destination="RFK-ro-kiJ" eventType="touchUpInside" id="hIO-I0-eFZ"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Refreshed:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FoO-jh-qra">
+                                <rect key="frame" x="81" y="24" width="219" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="News" image="newspaper.png" id="zkL-Xh-YEd"/>
                     <connections>
-                        <segue destination="OHJ-C3-Erb" kind="modal" identifier="signUp" animates="NO" id="q4a-xs-LSD"/>
+                        <outlet property="newsTextView" destination="Khm-x8-b99" id="PYw-2C-IsV"/>
+                        <outlet property="refreshedLabel" destination="FoO-jh-qra" id="kLF-LF-HzI"/>
+                        <segue destination="OHJ-C3-Erb" kind="modal" identifier="signUp" animates="NO" id="Led-G4-zSY"/>
                     </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3O2-16-Fqw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t4U-2S-a6h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2756" y="-134"/>
+            <point key="canvasLocation" x="2756" y="-147"/>
         </scene>
         <!--Settings Table View Controller - Settings-->
         <scene sceneID="CAm-rL-VeB">
@@ -418,7 +437,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="q4a-xs-LSD"/>
+        <segue reference="Led-G4-zSY"/>
         <segue reference="jog-LX-8vY"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -7,6 +7,8 @@
 //
 
 #import "NewsViewController.h"
+#import "Reachability.h"
+#import <Parse/Parse.h>
 
 @interface NewsViewController ()
 
@@ -29,6 +31,32 @@
     // Do any additional setup after loading the view.
     
     
+    //load content
+    
+    
+    //check if online
+    
+    
+    if ([[Reachability reachabilityForInternetConnection] currentReachabilityStatus] == NotReachable) {
+        //if internet is offline
+        
+        _newsTextView.text = @"OFFLINE";
+        
+//        [[[UIAlertView alloc] initWithTitle:@"Offline" message:@"You are offline. Please connect to the internet and try again" delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles: nil] show];
+        
+        
+        
+    } else {
+        
+        [self loadNews];
+        
+        
+    }
+    
+    
+    
+    
+    
     
     
 }
@@ -37,24 +65,6 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (void)viewWillLayoutSubviews {
-    
-    NSLog(@"\nCurrent User: %@", [[NSUserDefaults standardUserDefaults] objectForKey:@"currentUser"]);
-    
-    id currentUser = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentUser"];
-    
-    
-    
-    //check if user logged in
-    if (currentUser == nil) {
-        //if not logged in
-        [self performSegueWithIdentifier:@"signUp" sender:self];
-    }
-    
-    
-    
 }
 
 /*
@@ -68,4 +78,71 @@
 }
 */
 
+- (IBAction)refreshedButtonClicked:(UIButton *)sender {
+    
+    
+    
+    if ([[Reachability reachabilityForInternetConnection] currentReachabilityStatus] == NotReachable) {
+        //if internet is offline
+        
+        
+        
+        [[[UIAlertView alloc] initWithTitle:@"Offline" message:@"You are offline. Please connect to the internet and try again" delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles: nil] show];
+        
+        
+        
+    } else {
+        
+        [self loadNews];
+        
+        
+        
+    }
+
+    
+    
+    
+    
+    
+}
+
+
+- (void)loadNews {
+    
+    
+    
+    //if online, load content
+    
+    PFObject *news = [PFQuery getObjectOfClass:@"News" objectId:@"Bfzgc60Xir"];
+    
+    
+    //pull out info
+    NSString *title = [news objectForKey:@"title"];
+    NSString *username = [news objectForKey:@"username"];
+    NSDate *date = news.createdAt;
+    
+    NSDateFormatter *gmtFormatter = [[NSDateFormatter alloc] init];
+    [gmtFormatter setDateFormat:@"E MMM d @ hh:mm a"];
+    NSString *timePosted = [gmtFormatter stringFromDate:date];
+    
+    
+    
+    NSString *post = [news objectForKey:@"post"];
+    
+    
+    //format message to display
+    
+    NSString *message = [[NSString alloc] initWithFormat:@"Title: %@ \nUser: %@ \nTime: %@ \n\n%@", title, username, timePosted, post];
+    
+    
+    //display message
+    _newsTextView.text = message;
+    
+    //update loaded time at top
+    NSDate *currentDate = [NSDate date];
+    _refreshedLabel.text = [NSString stringWithFormat:@"Refreshed: %@", [gmtFormatter stringFromDate:currentDate]];
+    
+    
+    
+}
 @end

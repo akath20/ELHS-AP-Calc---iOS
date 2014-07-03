@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface NewsViewController : UIViewController
+@property (strong, nonatomic) IBOutlet UITextView *newsTextView;
+@property (strong, nonatomic) IBOutlet UILabel *refreshedLabel;
+
+- (IBAction)refreshedButtonClicked:(UIButton *)sender;
 
 @end
