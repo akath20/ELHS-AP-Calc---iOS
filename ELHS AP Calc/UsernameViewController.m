@@ -62,7 +62,7 @@
 
 - (IBAction)goPushed:(id)sender {
     
-    
+    [_usernameField resignFirstResponder];
     
     if (![_usernameField.text isEqual:@""]) {
         
@@ -86,6 +86,10 @@
                     if (succeeded) {
                         _statusText.text = @"Signed Up";
                         [_statusText setHidden:false];
+                        
+                        
+
+                        
                       
                         [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(nextScreen) userInfo:nil repeats:false];
                         
@@ -101,6 +105,20 @@
             
             //once user is in system, make it on device
             [[NSUserDefaults standardUserDefaults] setObject:_usernameField.text forKey:@"currentUser"];
+
+            
+            
+            
+            
+            //register for push notiications here
+            // Register for push notifications
+            [[UIApplication sharedApplication] registerForRemoteNotificationTypes:
+             UIRemoteNotificationTypeBadge |
+             UIRemoteNotificationTypeAlert |
+             UIRemoteNotificationTypeSound];
+            
+            
+            
             
         }];
         

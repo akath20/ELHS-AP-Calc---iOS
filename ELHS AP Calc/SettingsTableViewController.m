@@ -41,11 +41,16 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     
-    _logoutUser.titleLabel.text = [NSString stringWithFormat:@"    Signout %@", [[NSUserDefaults standardUserDefaults] objectForKey:@"currentUser"]];
+    
+    
     
 }
 
-
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    //Change the selected background view of the cell.
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
 
 
 /*
@@ -113,7 +118,7 @@
     
     
     UIActionSheet *warning = [[UIActionSheet alloc] init];
-    [[warning initWithTitle:@"Warning. This will delete username from database. Are you sure?" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:@"I'm sure" otherButtonTitles: nil] showFromTabBar:self.tabBarController.tabBar];
+    [[warning initWithTitle:[NSString stringWithFormat:@"Warning. This will delete username from database. Are you sure you want to signout %@?", [[NSUserDefaults standardUserDefaults] objectForKey:@"currentUser"]] delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:@"I'm sure" otherButtonTitles: nil] showFromTabBar:self.tabBarController.tabBar];
     
     
     
@@ -138,6 +143,9 @@
                     //if deleted
                     
                     if (succeeded && !error) {
+                        
+                        //clear from device
+                        [[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"currentUser"];
                         
                         [self performSegueWithIdentifier:@"showStart" sender:self];
                         

@@ -31,7 +31,11 @@
     // Do any additional setup after loading the view.
     
     
+    
+    
     //load content
+    
+    
     
     
     //check if online
@@ -58,6 +62,16 @@
     
     
     
+    
+}
+
+- (void)viewDidLayoutSubviews {
+    
+    
+    if (![[NSUserDefaults standardUserDefaults] objectForKey:@"currentUser"]) {
+        //if not logged in
+        [self performSegueWithIdentifier:@"signUp" sender:self];
+    }
     
 }
 
@@ -119,7 +133,7 @@
     //pull out info
     NSString *title = [news objectForKey:@"title"];
     NSString *username = [news objectForKey:@"username"];
-    NSDate *date = news.createdAt;
+    NSDate *date = news.updatedAt;
     
     NSDateFormatter *gmtFormatter = [[NSDateFormatter alloc] init];
     [gmtFormatter setDateFormat:@"E MMM d @ hh:mm a"];

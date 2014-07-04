@@ -227,7 +227,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="News Here" translatesAutoresizingMaskIntoConstraints="NO" id="Khm-x8-b99">
-                                <rect key="frame" x="0.0" y="58" width="320" height="460"/>
+                                <rect key="frame" x="20" y="58" width="280" height="460"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -286,7 +286,7 @@
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wza-xd-yi2">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="    Signout Username">
+                                                    <state key="normal" title="    Signout">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
@@ -387,10 +387,10 @@
             </objects>
             <point key="canvasLocation" x="3673" y="520"/>
         </scene>
-        <!--View Controller - Admin-->
+        <!--Admin Send Message View Controller - Send Message-->
         <scene sceneID="2SM-k5-aek">
             <objects>
-                <viewController id="ewM-62-ONs" sceneMemberID="viewController">
+                <viewController id="ewM-62-ONs" customClass="AdminSendMessageViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="AXv-Xd-F3Q"/>
                         <viewControllerLayoutGuide type="bottom" id="pUU-7O-LhT"/>
@@ -398,9 +398,46 @@
                     <view key="view" contentMode="scaleToFill" id="0DQ-cT-JPf">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cGL-gB-a9Y">
+                                <rect key="frame" x="20" y="75" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" text="Type Message Here" translatesAutoresizingMaskIntoConstraints="NO" id="XO4-y3-hiJ">
+                                <rect key="frame" x="20" y="152" width="280" height="191"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Push Notification?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="06v-9H-Ad4">
+                                <rect key="frame" x="20" y="118" width="141" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xGI-1P-Go2">
+                                <rect key="frame" x="251" y="113" width="51" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </switch>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Admin" id="PHz-rp-zkz"/>
+                    <navigationItem key="navigationItem" title="Send Message" id="PHz-rp-zkz">
+                        <barButtonItem key="rightBarButtonItem" title="Send" id="Jcl-4b-XXp">
+                            <connections>
+                                <action selector="sendPressed:" destination="ewM-62-ONs" id="155-ip-ik9"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="messageBox" destination="XO4-y3-hiJ" id="cBG-SU-wdy"/>
+                        <outlet property="pushNotificationSwitch" destination="xGI-1P-Go2" id="38W-pv-ift"/>
+                        <outlet property="sendButton" destination="Jcl-4b-XXp" id="oGw-hL-b3o"/>
+                        <outlet property="titleBox" destination="cGL-gB-a9Y" id="l0f-tv-aiq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k6D-mm-7T0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -437,7 +474,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Led-G4-zSY"/>
-        <segue reference="jog-LX-8vY"/>
+        <segue reference="Hjj-1Q-IEK"/>
+        <segue reference="imO-ng-VXq"/>
     </inferredMetricsTieBreakers>
 </document>
