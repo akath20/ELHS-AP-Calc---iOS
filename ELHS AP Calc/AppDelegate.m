@@ -30,6 +30,7 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)newDeviceToken {
     // Store the deviceToken in the current installation and save it to Parse.
     PFInstallation *currentInstallation = [PFInstallation currentInstallation];
     [currentInstallation setDeviceTokenFromData:newDeviceToken];
+    [currentInstallation setObject:[[NSUserDefaults standardUserDefaults] objectForKey:@"currentUser"] forKey:@"username"];
     [currentInstallation saveInBackground];
     
     NSLog(@"Registered for Push");
@@ -40,7 +41,9 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)newDeviceToken {
 
 - (void)application:(UIApplication *)application
 didReceiveRemoteNotification:(NSDictionary *)userInfo {
-    [PFPush handlePush:userInfo];
+    
+    
+    [[[UIAlertView alloc] initWithTitle:@"New Message" message:[NSString stringWithFormat:@"There is a new message. Please refresh news section."] delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles: nil] show];
 }
 
 

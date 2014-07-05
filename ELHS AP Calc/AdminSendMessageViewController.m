@@ -148,7 +148,8 @@
                             //send push here
                             
                             
-                            PFQuery *query = [[PFQuery alloc] init];
+                            PFQuery *query = [PFInstallation query];
+                            [query whereKeyDoesNotExist:@"sdfasdfasfd"];
                             [PFPush sendPushMessageToQueryInBackground:query withMessage:_titleBox.text block:^(BOOL succeeded, NSError *error) {
                                 if (succeeded && !error) {
                                     //if all good

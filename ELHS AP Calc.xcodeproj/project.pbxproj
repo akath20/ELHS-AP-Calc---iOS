@@ -14,6 +14,7 @@
 		FA26D0971964B33B00CD918B /* UsernameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA26D0961964B33B00CD918B /* UsernameViewController.m */; };
 		FA26D0A21964CF2E00CD918B /* gear.png in Resources */ = {isa = PBXBuildFile; fileRef = FA26D0A01964CF2E00CD918B /* gear.png */; };
 		FA26D0A31964CF2E00CD918B /* newspaper.png in Resources */ = {isa = PBXBuildFile; fileRef = FA26D0A11964CF2E00CD918B /* newspaper.png */; };
+		FA6467CC196885EA00EA9F47 /* UpdateQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6467CB196885EA00EA9F47 /* UpdateQuestionViewController.m */; };
 		FADA91011960854D00559C6C /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FADA91001960854D00559C6C /* Parse.framework */; };
 		FADA9104196370E300559C6C /* no-background.png in Resources */ = {isa = PBXBuildFile; fileRef = FADA9103196370E300559C6C /* no-background.png */; };
 		FADA9106196374F600559C6C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FADA9105196374F600559C6C /* AudioToolbox.framework */; };
@@ -66,6 +67,8 @@
 		FA26D0961964B33B00CD918B /* UsernameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsernameViewController.m; sourceTree = "<group>"; };
 		FA26D0A01964CF2E00CD918B /* gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gear.png; sourceTree = "<group>"; };
 		FA26D0A11964CF2E00CD918B /* newspaper.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newspaper.png; sourceTree = "<group>"; };
+		FA6467CA196885EA00EA9F47 /* UpdateQuestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateQuestionViewController.h; sourceTree = "<group>"; };
+		FA6467CB196885EA00EA9F47 /* UpdateQuestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateQuestionViewController.m; sourceTree = "<group>"; };
 		FADA91001960854D00559C6C /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		FADA9103196370E300559C6C /* no-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no-background.png"; sourceTree = "<group>"; };
 		FADA9105196374F600559C6C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -201,6 +204,8 @@
 				FAF5003C1960741D0068055F /* AppDelegate.h */,
 				FAF5003D1960741D0068055F /* AppDelegate.m */,
 				FAF5003F1960741D0068055F /* Main.storyboard */,
+				FA6467CA196885EA00EA9F47 /* UpdateQuestionViewController.h */,
+				FA6467CB196885EA00EA9F47 /* UpdateQuestionViewController.m */,
 				FA17651C1964E181008C0633 /* AdminSendMessageViewController.h */,
 				FA17651D1964E181008C0633 /* AdminSendMessageViewController.m */,
 				FA26D0951964B33B00CD918B /* UsernameViewController.h */,
@@ -360,6 +365,7 @@
 				FAF500441960741D0068055F /* ViewController.m in Sources */,
 				FADA9119196375D800559C6C /* VerifyViewController.m in Sources */,
 				FA26D0971964B33B00CD918B /* UsernameViewController.m in Sources */,
+				FA6467CC196885EA00EA9F47 /* UpdateQuestionViewController.m in Sources */,
 				FAF5003E1960741D0068055F /* AppDelegate.m in Sources */,
 				FA17651E1964E181008C0633 /* AdminSendMessageViewController.m in Sources */,
 				FA17651B1964D56F008C0633 /* NewsViewController.m in Sources */,
