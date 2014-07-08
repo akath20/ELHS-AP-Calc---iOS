@@ -15,6 +15,6 @@
 @property (strong, nonatomic) IBOutlet UITextView *messageBox;
 @property (strong, nonatomic) IBOutlet UISwitch *pushNotificationSwitch;
 
-- (IBAction)sendPressed:(UIBarButtonItem *)sender;
+- (IBAction)actionPressed:(UIBarButtonItem *)sender;
 
 @end

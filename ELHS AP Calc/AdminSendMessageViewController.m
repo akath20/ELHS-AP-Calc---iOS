@@ -52,8 +52,7 @@
 }
 */
 
-- (IBAction)sendPressed:(UIBarButtonItem *)sender {
-    
+- (void)sendMessage {
     if (([_titleBox.text isEqual:@""]) || ([_messageBox.text isEqual:@""]) || ([_messageBox.text isEqual:@"Type Message Here"])) {
         
         //if error
@@ -75,33 +74,40 @@
             
             
         } else {
-         
+            
             
             //confirm they want this
             
-            UIActionSheet *confirm = [[UIActionSheet alloc] init];
-            [[confirm initWithTitle:@"Are you sure you want to sent this message? WARNING: This will overwrite previous message in news tab." delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:@"Send" otherButtonTitles: nil] showInView:self.view];
+            UIActionSheet *confirm = [[UIActionSheet alloc] initWithTitle:@"Are you sure you want to sent this message? WARNING: This will overwrite previous message in news tab." delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:@"Send" otherButtonTitles: nil];
+            
+            confirm.tag = 0;
+            
+            [confirm showInView:self.view];
+             
             
             
-          
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
         }
-    
-    
-    
-    
+        
+        
+        
+        
     }
+    
+}
+
+- (IBAction)actionPressed:(UIBarButtonItem *)sender {
+    
+    
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Choose Action" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Send Message", @"Update Question", nil];
+    
+
+    actionSheet.tag = 1;
+    
+    [actionSheet showInView:self.view];
+    
+
+
+
     
 }
 
@@ -112,93 +118,129 @@
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
     
     
-    if ([[actionSheet buttonTitleAtIndex:buttonIndex] isEqualToString:@"Send"]) {
-     
-        //send message
+    if (actionSheet.tag == 0) {
+        //send actionsheet
         
-        //if all good update
         
-        PFQuery *query = [PFQuery queryWithClassName:@"News"];
-        [query getObjectInBackgroundWithId:@"Bfzgc60Xir" block:^(PFObject *object, NSError *error) {
+        if ([[actionSheet buttonTitleAtIndex:buttonIndex] isEqualToString:@"Send"]) {
             
-            if (error) {
+            //send message
+            
+            //if all good update
+            
+            PFQuery *query = [PFQuery queryWithClassName:@"News"];
+            [query getObjectInBackgroundWithId:@"Bfzgc60Xir" block:^(PFObject *object, NSError *error) {
                 
-                
-                [self errorAlert:error];
-                
-                
-            } else {
-                
-                //if good update
-                object[@"title"] = _titleBox.text;
-                object[@"username"] = [[NSUserDefaults standardUserDefaults] objectForKey:@"adminUsername"];
-                object[@"post"] = _messageBox.text;
-                [object saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-                    if (succeeded && !error) {
-                        
-                        //
-                        
-                        
-                        
-                        if ([_pushNotificationSwitch isOn]) {
-                            //if push is on, send push
+                if (error) {
+                    
+                    
+                    [self errorAlert:error];
+                    
+                    
+                } else {
+                    
+                    //if good update
+                    object[@"title"] = _titleBox.text;
+                    object[@"username"] = [[NSUserDefaults standardUserDefaults] objectForKey:@"adminUsername"];
+                    object[@"post"] = _messageBox.text;
+                    [object saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                        if (succeeded && !error) {
+                            
+                            //
                             
                             
                             
-                            //send push here
+                            if ([_pushNotificationSwitch isOn]) {
+                                //if push is on, send push
+                                
+                                
+                                
+                                //send push here
+                                
+                                
+                                PFQuery *query = [PFInstallation query];
+                                [query whereKeyDoesNotExist:@"sdfasdfasfd"];
+                                [PFPush sendPushMessageToQueryInBackground:query withMessage:_titleBox.text block:^(BOOL succeeded, NSError *error) {
+                                    if (succeeded && !error) {
+                                        //if all good
+                                        [[[UIAlertView alloc] initWithTitle:@"Sent" message:@"Message was successfully sent." delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles: nil] show];
+                                        
+                                    } else {
+                                        
+                                        [self errorAlert:error];
+                                        
+                                        
+                                        
+                                    }
+                                }];
+                                
+                                
+                                
+                            } else {
+                                
+                                //else, everything is good
+                                
+                                [[[UIAlertView alloc] initWithTitle:@"Sent" message:@"Message was successfully updated." delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles: nil] show];
+                                
+                            }
                             
                             
-                            PFQuery *query = [PFInstallation query];
-                            [query whereKeyDoesNotExist:@"sdfasdfasfd"];
-                            [PFPush sendPushMessageToQueryInBackground:query withMessage:_titleBox.text block:^(BOOL succeeded, NSError *error) {
-                                if (succeeded && !error) {
-                                    //if all good
-                                    [[[UIAlertView alloc] initWithTitle:@"Sent" message:@"Message was successfully sent." delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles: nil] show];
-                                    
-                                } else {
-                                    
-                                    [self errorAlert:error];
-                                    
-                                    
-                                    
-                                }
-                            }];
+                            
                             
                             
                             
                         } else {
                             
-                            //else, everything is good
+                            //if error
+                            [self errorAlert:error];
                             
-                            [[[UIAlertView alloc] initWithTitle:@"Sent" message:@"Message was successfully updated." delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles: nil] show];
                             
                         }
-                        
-                        
-                        
-                        
-                        
-                        
-                    } else {
-                        
-                        //if error
-                        [self errorAlert:error];
-                        
-                        
-                    }
-                }];
+                    }];
+                    
+                }
                 
-            }
+            }];
             
-        }];
+            
+            
+            
+        }
+        
+        
+        //else cancel
         
         
         
+    } else if (actionSheet.tag == 1) {
+        //action actionsheet
+        
+        if ([[actionSheet buttonTitleAtIndex:buttonIndex] isEqualToString:@"Send Message"]) {
+            
+            [self sendMessage];
+            
+        } else if ([[actionSheet buttonTitleAtIndex:buttonIndex] isEqualToString:@"Update Question"]) {
+            
+            [self performSegueWithIdentifier:@"updateQuestion" sender:nil];
+            
+            
+        } else {
+            
+            NSLog(@"Error with admin update question segue");
+            
+        }
+        
+        
+        
+        
+        
+        
+    } else {
+        NSLog(@"ActionSheet Error, Send Message - Admin");
         
     }
     
     
-    //else cancel
     
 }
 
