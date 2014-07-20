@@ -35,6 +35,10 @@
     }
     
     
+    //set the version here
+    [self.versionLabel setText:[NSString stringWithFormat:@"Version %@", [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]]];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -86,6 +90,12 @@
         }
     }];
     
+    
+}
+
+- (IBAction)cancelPressed:(id)sender {
+    
+    [self dismissViewControllerAnimated:true completion:nil];
     
 }
 @end

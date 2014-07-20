@@ -6,8 +6,11 @@
 //  Copyright (c) 2014 Alex Atwater. All rights reserved.
 //
 
+
+
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
+#import <sys/utsname.h>
 
 @implementation AppDelegate
 
@@ -30,10 +33,20 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)newDeviceToken {
     // Store the deviceToken in the current installation and save it to Parse.
     PFInstallation *currentInstallation = [PFInstallation currentInstallation];
     [currentInstallation setDeviceTokenFromData:newDeviceToken];
-    [currentInstallation setObject:[[NSUserDefaults standardUserDefaults] objectForKey:@"currentUser"] forKey:@"username"];
+    [currentInstallation setObject:[[UIDevice currentDevice] name] forKey:@"deviceName"];
+    [currentInstallation setObject:@"yes" forKey:@"cangetpush"];
+    [currentInstallation setObject:[[UIDevice currentDevice] systemVersion] forKey:@"systemVersion"];
+    
+    //get the device type
+    //*IMPORT* <sys/utsname.h>
+    struct utsname systemInfo;
+    uname(&systemInfo);
+    //NSString *deviceType = [NSString stringWithCString:systemInfo.machine encoding:NSUTF8StringEncoding];
+    
+    [currentInstallation setObject:[NSString stringWithCString:systemInfo.machine encoding:NSUTF8StringEncoding] forKey:@"hardwareType"];
     [currentInstallation saveInBackground];
     
-    NSLog(@"Registered for Push");
+    NSLog(@"Registered for Push. Analytics logged");
     
 }
 

@@ -12,6 +12,6 @@
 @property (strong, nonatomic) IBOutlet UITextView *newsTextView;
 @property (strong, nonatomic) IBOutlet UILabel *refreshedLabel;
 
-- (IBAction)refreshedButtonClicked:(UIButton *)sender;
+- (IBAction)refreshedButtonClicked:(UIBarButtonItem *)sender;
 
 @end

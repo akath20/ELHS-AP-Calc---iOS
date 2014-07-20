@@ -68,7 +68,7 @@
 - (void)viewDidLayoutSubviews {
     
     
-    if (![[NSUserDefaults standardUserDefaults] objectForKey:@"currentUser"]) {
+    if (![[NSUserDefaults standardUserDefaults] objectForKey:@"validUser"]) {
         //if not logged in
         [self performSegueWithIdentifier:@"signUp" sender:self];
     }
@@ -92,7 +92,7 @@
 }
 */
 
-- (IBAction)refreshedButtonClicked:(UIButton *)sender {
+- (IBAction)refreshedButtonClicked:(UIBarButtonItem *)sender {
     
     
     

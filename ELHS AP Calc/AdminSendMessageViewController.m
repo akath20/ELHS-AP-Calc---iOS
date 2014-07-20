@@ -148,8 +148,6 @@
                             
                             //
                             
-                            
-                            
                             if ([_pushNotificationSwitch isOn]) {
                                 //if push is on, send push
                                 
@@ -159,7 +157,7 @@
                                 
                                 
                                 PFQuery *query = [PFInstallation query];
-                                [query whereKeyDoesNotExist:@"sdfasdfasfd"];
+                                [query whereKey:@"cangetpush" equalTo:@"yes"];
                                 [PFPush sendPushMessageToQueryInBackground:query withMessage:_titleBox.text block:^(BOOL succeeded, NSError *error) {
                                     if (succeeded && !error) {
                                         //if all good

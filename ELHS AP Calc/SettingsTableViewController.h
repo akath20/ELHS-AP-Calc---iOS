@@ -13,6 +13,6 @@
 
 @property (strong, nonatomic) IBOutlet UIButton *logoutUser;
 
-- (IBAction)signout:(id)sender;
+- (IBAction)reset:(id)sender;
 
 @end

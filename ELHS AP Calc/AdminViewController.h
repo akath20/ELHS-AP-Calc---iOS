@@ -11,7 +11,9 @@
 @interface AdminViewController : UIViewController
 @property (strong, nonatomic) IBOutlet UITextField *username;
 @property (strong, nonatomic) IBOutlet UITextField *password;
+@property (strong, nonatomic) IBOutlet UILabel *versionLabel;
 
 - (IBAction)goPressed:(id)sender;
+- (IBAction)cancelPressed:(id)sender;
 
 @end

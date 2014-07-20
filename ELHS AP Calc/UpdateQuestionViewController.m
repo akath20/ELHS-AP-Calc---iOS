@@ -133,6 +133,9 @@
             //set the answer
             [object setObject:_answerField.text forKey:@"Answer"];
             
+            //set the username
+            [object setObject:[[NSUserDefaults standardUserDefaults] objectForKey:@"adminUsername"] forKey:@"username"];
+            
             
             [object saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                 if (succeeded && !error) {

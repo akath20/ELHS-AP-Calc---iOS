@@ -122,7 +122,17 @@
     //verify answer
     
     if ([[_userAnswer.text lowercaseString] isEqualToString:questionAnswer]) {
-        //if matches from database, go on
+        //if matches from database register everything with parse and local device
+        [[NSUserDefaults standardUserDefaults] setBool:true forKey:@"validUser"];
+        
+        
+        [[UIApplication sharedApplication] registerForRemoteNotificationTypes:
+         UIRemoteNotificationTypeBadge |
+         UIRemoteNotificationTypeAlert |
+         UIRemoteNotificationTypeSound];
+        
+        
+        //then go on
         [self performSegueWithIdentifier:@"verified" sender:nil];
         
     } else {

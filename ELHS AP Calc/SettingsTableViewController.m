@@ -113,12 +113,12 @@
 }
 */
 
-- (IBAction)signout:(id)sender {
+- (IBAction)reset:(id)sender {
     
     
     
     UIActionSheet *warning = [[UIActionSheet alloc] init];
-    [[warning initWithTitle:[NSString stringWithFormat:@"Warning. This will delete username from database. Are you sure you want to signout %@?", [[NSUserDefaults standardUserDefaults] objectForKey:@"currentUser"]] delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:@"I'm sure" otherButtonTitles: nil] showFromTabBar:self.tabBarController.tabBar];
+    [[warning initWithTitle:[NSString stringWithFormat:@"Warning. This will reset app and make you pass validation again. Are you sure?"] delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:@"I'm sure" otherButtonTitles: nil] showFromTabBar:self.tabBarController.tabBar];
     
     
     
@@ -128,46 +128,18 @@
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
     
     if ([[actionSheet buttonTitleAtIndex:buttonIndex] isEqualToString:@"I'm sure"]) {
-        //delete account and move to log in
         
-        //find username to delete
-        PFQuery *query = [PFQuery queryWithClassName:@"Users"];
-        [query whereKey:@"username" equalTo:[[NSUserDefaults standardUserDefaults] objectForKey:@"currentUser"]];
-        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-           
-            
-            if ([objects count] == 1 && !error) {
-                //all set, now delete
-                
-                [[objects objectAtIndex:0] deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-                    //if deleted
-                    
-                    if (succeeded && !error) {
-                        
-                        //clear from device
-                        [[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"currentUser"];
-                        
-                        [self performSegueWithIdentifier:@"showStart" sender:self];
-                        
-                    } else {
-                        
-                        //if error
-                        [[self errorAlert] show];
-                        
-                    }
-                    
-                }];
-                
-            } else {
-                
-                //if error
-                
-                [[self errorAlert] show];
-            }
-            
-            
-            
-        }];
+        
+        //reset current device
+        [[NSUserDefaults standardUserDefaults] setBool:false forKey:@"validUser"];
+        
+        //Deregister Push HERE
+        
+        
+        
+        //switch back to login
+        [self performSegueWithIdentifier:@"showStart" sender:self];
+        
         
         
         

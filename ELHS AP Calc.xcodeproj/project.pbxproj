@@ -24,7 +24,6 @@
 		FADA91121963753800559C6C /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FADA910A1963753800559C6C /* MobileCoreServices.framework */; };
 		FADA91131963753800559C6C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FADA910B1963753800559C6C /* QuartzCore.framework */; };
 		FADA91141963753800559C6C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FADA910C1963753800559C6C /* Security.framework */; };
-		FADA91151963753800559C6C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FADA910D1963753800559C6C /* StoreKit.framework */; };
 		FADA91161963753800559C6C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FADA910E1963753800559C6C /* SystemConfiguration.framework */; };
 		FADA9119196375D800559C6C /* VerifyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FADA9118196375D800559C6C /* VerifyViewController.m */; };
 		FADA911C1963767B00559C6C /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = FADA911B1963767B00559C6C /* Reachability.m */; };
@@ -78,7 +77,6 @@
 		FADA910A1963753800559C6C /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		FADA910B1963753800559C6C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		FADA910C1963753800559C6C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		FADA910D1963753800559C6C /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		FADA910E1963753800559C6C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		FADA9117196375D800559C6C /* VerifyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerifyViewController.h; sourceTree = "<group>"; };
 		FADA9118196375D800559C6C /* VerifyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerifyViewController.m; sourceTree = "<group>"; };
@@ -116,7 +114,6 @@
 				FADA91121963753800559C6C /* MobileCoreServices.framework in Frameworks */,
 				FADA91131963753800559C6C /* QuartzCore.framework in Frameworks */,
 				FADA91141963753800559C6C /* Security.framework in Frameworks */,
-				FADA91151963753800559C6C /* StoreKit.framework in Frameworks */,
 				FADA91161963753800559C6C /* SystemConfiguration.framework in Frameworks */,
 				FAF500301960741D0068055F /* CoreGraphics.framework in Frameworks */,
 				FADA9106196374F600559C6C /* AudioToolbox.framework in Frameworks */,
@@ -139,15 +136,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		FA26D0981964BDFF00CD918B /* News */ = {
-			isa = PBXGroup;
-			children = (
-				FA1765191964D56F008C0633 /* NewsViewController.h */,
-				FA17651A1964D56F008C0633 /* NewsViewController.m */,
-			);
-			name = News;
-			sourceTree = "<group>";
-		};
 		FADA9102196370CA00559C6C /* Media */ = {
 			isa = PBXGroup;
 			children = (
@@ -186,7 +174,6 @@
 				FADA910A1963753800559C6C /* MobileCoreServices.framework */,
 				FADA910B1963753800559C6C /* QuartzCore.framework */,
 				FADA910C1963753800559C6C /* Security.framework */,
-				FADA910D1963753800559C6C /* StoreKit.framework */,
 				FADA910E1963753800559C6C /* SystemConfiguration.framework */,
 				FADA9105196374F600559C6C /* AudioToolbox.framework */,
 				FADA91001960854D00559C6C /* Parse.framework */,
@@ -220,7 +207,8 @@
 				FA26D0901963961800CD918B /* SettingsTableViewController.m */,
 				FA26D09219639BEB00CD918B /* AdminViewController.h */,
 				FA26D09319639BEB00CD918B /* AdminViewController.m */,
-				FA26D0981964BDFF00CD918B /* News */,
+				FA1765191964D56F008C0633 /* NewsViewController.h */,
+				FA17651A1964D56F008C0633 /* NewsViewController.m */,
 				FADA9102196370CA00559C6C /* Media */,
 				FAF500451960741E0068055F /* Images.xcassets */,
 				FAF500341960741D0068055F /* Supporting Files */,
@@ -306,6 +294,11 @@
 				TargetAttributes = {
 					FAF500291960741D0068055F = {
 						DevelopmentTeam = AZN3C59G8S;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 0;
+							};
+						};
 					};
 					FAF5004A1960741E0068055F = {
 						TestTargetID = FAF500291960741D0068055F;
@@ -506,7 +499,7 @@
 				INFOPLIST_FILE = "ELHS AP Calc/ELHS AP Calc-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "DD5846F6-4704-4F1E-92CE-C8CD34AC89D0";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -527,7 +520,7 @@
 				INFOPLIST_FILE = "ELHS AP Calc/ELHS AP Calc-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "0F7574E4-71D1-44EA-A987-09D703326DBC";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
