@@ -121,7 +121,7 @@
     
     //verify answer
     
-    if ([[_userAnswer.text lowercaseString] isEqualToString:questionAnswer]) {
+    if ([[[_userAnswer.text lowercaseString] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] isEqualToString:[questionAnswer lowercaseString]]) {
         //if matches from database register everything with parse and local device
         [[NSUserDefaults standardUserDefaults] setBool:true forKey:@"validUser"];
         
@@ -130,6 +130,7 @@
          UIRemoteNotificationTypeBadge |
          UIRemoteNotificationTypeAlert |
          UIRemoteNotificationTypeSound];
+       
         
         
         //then go on

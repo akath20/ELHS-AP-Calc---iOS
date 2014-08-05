@@ -16,5 +16,6 @@
 @property (strong, nonatomic) IBOutlet UISwitch *pushNotificationSwitch;
 
 - (IBAction)actionPressed:(UIBarButtonItem *)sender;
+@property (strong, nonatomic) IBOutlet UILabel *numberLabel;
 
 @end

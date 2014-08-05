@@ -30,10 +30,35 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    [self.numberLabel setText:@""];
+    
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    
+    //load the number to send to
+    [PFCloud callFunctionInBackground:@"pushcount" withParameters:@{} block:^(id object, NSError *error) {
+        if (error) {
+            NSLog(@"\nError in Push Count. Check cloud code for info");
+            
+            [self.numberLabel setText:@"N/A"];
+        } else {
+            
+            
+            [self.numberLabel setText:[NSString stringWithFormat:@"%@", object]];
+        }
+        
+        
+        
+    }];
+    
     
     
     
 }
+
+
 
 - (void)didReceiveMemoryWarning
 {

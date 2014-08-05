@@ -128,10 +128,10 @@
             //else
             
             //set question
-            [object setObject:_questionField.text forKey:@"Question"];
+            [object setObject:[_questionField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] forKey:@"Question"];
             
             //set the answer
-            [object setObject:_answerField.text forKey:@"Answer"];
+            [object setObject:[_answerField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] forKey:@"Answer"];
             
             //set the username
             [object setObject:[[NSUserDefaults standardUserDefaults] objectForKey:@"adminUsername"] forKey:@"username"];

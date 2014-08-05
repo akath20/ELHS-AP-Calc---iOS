@@ -21,6 +21,7 @@
     
     [Parse setApplicationId:@"Z3T4v6PoKP78FXu9qyyuoLvq9SbOd7Z1dptwGenI"
                   clientKey:@"5WYuDH5xn89Sqqe1noKgUjVx112sA0lBWecXVO1d"];
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
     
     return YES;
@@ -36,6 +37,8 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)newDeviceToken {
     [currentInstallation setObject:[[UIDevice currentDevice] name] forKey:@"deviceName"];
     [currentInstallation setObject:@"yes" forKey:@"cangetpush"];
     [currentInstallation setObject:[[UIDevice currentDevice] systemVersion] forKey:@"systemVersion"];
+    
+    
     
     //get the device type
     //*IMPORT* <sys/utsname.h>

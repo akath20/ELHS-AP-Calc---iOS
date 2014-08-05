@@ -68,7 +68,7 @@
 - (IBAction)goPressed:(id)sender {
     
     PFQuery *query = [PFQuery queryWithClassName:@"Admins"];
-    [query whereKey:@"username" equalTo:_username.text];
+    [query whereKey:@"username" equalTo:[_username.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]]];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (error||[objects count] < 1) {
             //wrong username
