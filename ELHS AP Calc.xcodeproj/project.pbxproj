@@ -35,7 +35,6 @@
 		FAF5003E1960741D0068055F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF5003D1960741D0068055F /* AppDelegate.m */; };
 		FAF500411960741D0068055F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAF5003F1960741D0068055F /* Main.storyboard */; };
 		FAF500441960741D0068055F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF500431960741D0068055F /* ViewController.m */; };
-		FAF500461960741E0068055F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAF500451960741E0068055F /* Images.xcassets */; };
 		FAF5004D1960741E0068055F /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF5004C1960741E0068055F /* XCTest.framework */; };
 		FAF5004E1960741E0068055F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF5002D1960741D0068055F /* Foundation.framework */; };
 		FAF5004F1960741E0068055F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF500311960741D0068055F /* UIKit.framework */; };
@@ -329,7 +328,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAF500461960741E0068055F /* Images.xcassets in Resources */,
 				FA26D0A21964CF2E00CD918B /* gear.png in Resources */,
 				FAF500381960741D0068055F /* InfoPlist.strings in Resources */,
 				FADA9104196370E300559C6C /* no-background.png in Resources */,

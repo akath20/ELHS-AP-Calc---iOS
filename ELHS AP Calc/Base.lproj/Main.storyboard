@@ -198,7 +198,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" editable="NO" text="News Here" translatesAutoresizingMaskIntoConstraints="NO" id="KDh-VN-gwa">
-                                <rect key="frame" x="20" y="107" width="280" height="441"/>
+                                <rect key="frame" x="20" y="107" width="280" height="461"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -211,13 +211,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="cZs-nZ-mdz" firstAttribute="top" secondItem="KDh-VN-gwa" secondAttribute="bottom" constant="20" id="3Hd-E0-foL"/>
                             <constraint firstItem="FoO-jh-qra" firstAttribute="leading" secondItem="LJL-85-0sg" secondAttribute="leading" constant="20" id="EVm-Go-s1u"/>
                             <constraint firstItem="KDh-VN-gwa" firstAttribute="top" secondItem="FoO-jh-qra" secondAttribute="bottom" constant="8" id="Gu5-Lc-gTd"/>
                             <constraint firstAttribute="trailing" secondItem="KDh-VN-gwa" secondAttribute="trailing" constant="20" id="IVn-vs-xcJ"/>
                             <constraint firstAttribute="trailing" secondItem="FoO-jh-qra" secondAttribute="trailing" constant="20" id="Icy-6d-6iE"/>
                             <constraint firstItem="KDh-VN-gwa" firstAttribute="top" secondItem="FoO-jh-qra" secondAttribute="bottom" constant="8" id="R9v-Ii-nN1"/>
                             <constraint firstItem="FoO-jh-qra" firstAttribute="top" secondItem="fuX-Og-PYM" secondAttribute="bottom" constant="9" id="ZBX-9D-8ov"/>
+                            <constraint firstItem="cZs-nZ-mdz" firstAttribute="top" secondItem="KDh-VN-gwa" secondAttribute="bottom" id="ogs-vh-N3V"/>
                             <constraint firstItem="KDh-VN-gwa" firstAttribute="leading" secondItem="LJL-85-0sg" secondAttribute="leading" constant="20" id="r9J-C5-ab9"/>
                         </constraints>
                     </view>

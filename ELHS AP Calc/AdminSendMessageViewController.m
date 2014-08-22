@@ -174,7 +174,7 @@
                     [object saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                         if (succeeded && !error) {
                             
-                            //
+                            
                             
                             if ([_pushNotificationSwitch isOn]) {
                                 //if push is on, send push
@@ -189,7 +189,7 @@
                                 [PFPush sendPushMessageToQueryInBackground:query withMessage:_titleBox.text block:^(BOOL succeeded, NSError *error) {
                                     if (succeeded && !error) {
                                         //if all good
-                                        [[[UIAlertView alloc] initWithTitle:@"Sent" message:@"Message was successfully sent." delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles: nil] show];
+                                        [self sendEmail:@{@"title": _titleBox.text, @"username": [[NSUserDefaults standardUserDefaults] objectForKey:@"adminUsername"], @"post": _messageBox.text}];
                                         
                                     } else {
                                         
@@ -205,8 +205,9 @@
                             } else {
                                 
                                 //else, everything is good
+                                [self sendEmail:@{@"title": _titleBox.text, @"username": [[NSUserDefaults standardUserDefaults] objectForKey:@"adminUsername"], @"post": _messageBox.text}];
                                 
-                                [[[UIAlertView alloc] initWithTitle:@"Sent" message:@"Message was successfully updated." delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles: nil] show];
+                                //[[[UIAlertView alloc] initWithTitle:@"Sent" message:@"Message was successfully updated." delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles: nil] show];
                                 
                             }
                             
@@ -274,6 +275,25 @@
     
     
     [[[UIAlertView alloc] initWithTitle:@"Error" message:[NSString stringWithFormat:@"There was an error. Please try again. %@", error.localizedDescription] delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles: nil] show];
+    
+    
+    
+    
+}
+
+- (void)sendEmail:(NSDictionary *)dictionary {
+    
+    [PFCloud callFunctionInBackground:@"sendEmail" withParameters:dictionary block:^(id object, NSError *error) {
+        if (error) {
+            [[[UIAlertView alloc] initWithTitle:@"Error" message:[NSString stringWithFormat:@"Message was update and sent on devices successfully. However, there was an error in sending out the message via email. %@", error.userInfo[@"error"]] delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles: nil] show];
+        } else {
+            
+            [[[UIAlertView alloc] initWithTitle:@"Success" message:@"Your message was sent sucessfully." delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles: nil] show];
+            
+            
+        }
+    }];
+    
     
     
     
