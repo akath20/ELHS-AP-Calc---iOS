@@ -14,6 +14,7 @@
 		FA26D0971964B33B00CD918B /* UsernameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA26D0961964B33B00CD918B /* UsernameViewController.m */; };
 		FA26D0A21964CF2E00CD918B /* gear.png in Resources */ = {isa = PBXBuildFile; fileRef = FA26D0A01964CF2E00CD918B /* gear.png */; };
 		FA26D0A31964CF2E00CD918B /* newspaper.png in Resources */ = {isa = PBXBuildFile; fileRef = FA26D0A11964CF2E00CD918B /* newspaper.png */; };
+		FA5D656619A7B44D00A88537 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA5D656519A7B44D00A88537 /* Images.xcassets */; };
 		FA6467CC196885EA00EA9F47 /* UpdateQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6467CB196885EA00EA9F47 /* UpdateQuestionViewController.m */; };
 		FADA91011960854D00559C6C /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FADA91001960854D00559C6C /* Parse.framework */; };
 		FADA9104196370E300559C6C /* no-background.png in Resources */ = {isa = PBXBuildFile; fileRef = FADA9103196370E300559C6C /* no-background.png */; };
@@ -65,6 +66,7 @@
 		FA26D0961964B33B00CD918B /* UsernameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsernameViewController.m; sourceTree = "<group>"; };
 		FA26D0A01964CF2E00CD918B /* gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gear.png; sourceTree = "<group>"; };
 		FA26D0A11964CF2E00CD918B /* newspaper.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newspaper.png; sourceTree = "<group>"; };
+		FA5D656519A7B44D00A88537 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FA6467CA196885EA00EA9F47 /* UpdateQuestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateQuestionViewController.h; sourceTree = "<group>"; };
 		FA6467CB196885EA00EA9F47 /* UpdateQuestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateQuestionViewController.m; sourceTree = "<group>"; };
 		FADA91001960854D00559C6C /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
@@ -94,7 +96,6 @@
 		FAF500401960741D0068055F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FAF500421960741D0068055F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		FAF500431960741D0068055F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		FAF500451960741E0068055F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FAF5004B1960741E0068055F /* ELHS AP CalcTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ELHS AP CalcTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAF5004C1960741E0068055F /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		FAF500541960741F0068055F /* ELHS AP CalcTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ELHS AP CalcTests-Info.plist"; sourceTree = "<group>"; };
@@ -208,8 +209,8 @@
 				FA26D09319639BEB00CD918B /* AdminViewController.m */,
 				FA1765191964D56F008C0633 /* NewsViewController.h */,
 				FA17651A1964D56F008C0633 /* NewsViewController.m */,
+				FA5D656519A7B44D00A88537 /* Images.xcassets */,
 				FADA9102196370CA00559C6C /* Media */,
-				FAF500451960741E0068055F /* Images.xcassets */,
 				FAF500341960741D0068055F /* Supporting Files */,
 			);
 			path = "ELHS AP Calc";
@@ -331,6 +332,7 @@
 				FA26D0A21964CF2E00CD918B /* gear.png in Resources */,
 				FAF500381960741D0068055F /* InfoPlist.strings in Resources */,
 				FADA9104196370E300559C6C /* no-background.png in Resources */,
+				FA5D656619A7B44D00A88537 /* Images.xcassets in Resources */,
 				FAF500411960741D0068055F /* Main.storyboard in Resources */,
 				FA26D0A31964CF2E00CD918B /* newspaper.png in Resources */,
 			);
