@@ -12,6 +12,7 @@
 @property (strong, nonatomic) IBOutlet UITextField *username;
 @property (strong, nonatomic) IBOutlet UITextField *password;
 @property (strong, nonatomic) IBOutlet UILabel *versionLabel;
+@property (strong, nonatomic) IBOutlet UIButton *goButton;
 
 - (IBAction)goPressed:(id)sender;
 - (IBAction)cancelPressed:(id)sender;

@@ -24,6 +24,15 @@
     return self;
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [self.goButton setEnabled:true];
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:false];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:false];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -61,11 +70,18 @@
 
 - (void)showAlert {
     
+    [self.goButton setEnabled:true];
+    
     [[[UIAlertView alloc] initWithTitle:@"Wrong Username/Password" message:@"Check username and password." delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles: nil] show];
     
 }
 
 - (IBAction)goPressed:(id)sender {
+
+    [self.goButton setEnabled:false];
+    
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:true];
+    
     
     PFQuery *query = [PFQuery queryWithClassName:@"Admins"];
     [query whereKey:@"username" equalTo:[_username.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]]];
@@ -81,6 +97,7 @@
         
             if ([[[objects objectAtIndex:0] objectForKey:@"password"] isEqualToString:_password.text]) {
                 [self performSegueWithIdentifier:@"adminPage" sender:nil];
+                [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:false];
                 
                 //save username
                 [[NSUserDefaults standardUserDefaults] setObject:_username.text forKey:@"adminUsername"];
@@ -88,6 +105,8 @@
             
             
         }
+        
+        [self.goButton setEnabled:true];
     }];
     
     

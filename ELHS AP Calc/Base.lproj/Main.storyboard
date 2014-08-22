@@ -319,6 +319,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="goButton" destination="dAU-QV-H75" id="923-K1-Pdh"/>
                         <outlet property="password" destination="QlW-5J-BWT" id="tac-oZ-V2A"/>
                         <outlet property="username" destination="fGQ-Og-ygg" id="L1c-ag-MNn"/>
                         <outlet property="versionLabel" destination="jHf-i7-QBd" id="jRP-ui-dey"/>

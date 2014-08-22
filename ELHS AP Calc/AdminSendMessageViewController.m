@@ -37,6 +37,9 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     
+    
+    
+    
     //load the number to send to
     [PFCloud callFunctionInBackground:@"pushcount" withParameters:@{} block:^(id object, NSError *error) {
         if (error) {
